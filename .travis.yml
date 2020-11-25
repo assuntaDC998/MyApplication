@@ -18,9 +18,13 @@ android:
     #- extra-google-google_play_services
     - extra-android-support
     - extra-android-m2repository
+    - extra-google-m2repository
+
 
 before_install:
   - chmod +x ./gradlew
+  - yes | sdkmanager "platforms;android-30"
+
 
 script:
   - ./gradlew build
